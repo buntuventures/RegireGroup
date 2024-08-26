@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap");
+
+:root {
+  --primary-color: #000000;
+  --secondary-color: #ffffff;
+  --accent-color: #333333;
+  --text-color: #333333;
+  --background-color: #ffffff;
+}
+
+#root {
+  margin: 0 auto;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+}
+
+.landing-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.header nav a:hover{
+
+  text-decoration: underline;
+  
+
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  height: 100px;
+  width: 100px;
+  color: var(--primary-color);
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  outline: none;
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.hero {
+  text-align: center;
+  padding: 100px 0;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: var(--accent-color);
+}
+
+section {
+  margin: 80px 0;
+}
+
+.preaction {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoFoot {
+  margin-right: 0px; /* Espace entre l'image et le séparateur */
+  height: 150px;
+}
+
+.regire {
+  margin: 0; /* Supprime les marges par défaut du h1 */
+  position: relative; /* Pour positionner le pseudo-élément */
+  padding-left: 15px; /* Espace entre le séparateur et le texte */
+}
+
+.regire::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 80%; /* Ajustez selon vos préférences */
+  width: 2px;
+  background-color: #333333; /* Couleur du séparateur, ajustez selon vos besoins */
+}
+
+h3 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: var(--primary-color);
+}
+
+/* ... (le reste du CSS reste inchangé) ... */
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-weight: 700;
+  }
+  
+  .about-content p {
+    margin-bottom: 20px;
+  }
+  
+  .about-content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .about-content li {
+    margin-bottom: 10px;
+  }
+  
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.service-item {
+  background-color: #f8f8f8;
+  padding: 30px;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+}
+
+.unique-value ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.unique-value li {
+  margin-bottom: 15px;
+  padding-left: 30px;
+  position: relative;
+}
+
+.unique-value li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+}
+
+.cta {
+  text-align: center;
+  background-color: #f8f8f8;
+  padding: 60px 0;
+  border-radius: 8px;
+}
+
+.cta-buttons {
+  margin-top: 30px;
+}
+
+.btn {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn.primary {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  margin-right: 15px;
+}
+
+.btn.secondary {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 80px;
+  border-top: 1px solid #eaeaea;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .cta-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    margin: 10px 0;
+  }
+}
