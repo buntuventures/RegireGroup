@@ -17,7 +17,7 @@ const CallToAction: React.FC = () => {
         >
           Join Us
         </a>
-        <a href="mailto:jesse@regiregroup.com" className="btn secondary">
+        <a href="mailto:hello@regire.com" className="btn secondary">
           Get in Touch
         </a>
       </div>

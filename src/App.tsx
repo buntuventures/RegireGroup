@@ -44,7 +44,7 @@ const Home: React.FC = () => (
         <img src={Logo} alt="RegireLogo" className="logoFoot" />
         <h1 className="regire">Regire</h1>
       </div>
-      <a href="mailto:jesse@regiregroup.com" className="hero-subtitle">
+      <a href="mailto:hello@regire.com" className="hero-subtitle">
         hello@regire.com
       </a>
     </section>
