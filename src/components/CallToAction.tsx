@@ -5,8 +5,8 @@ const CallToAction: React.FC = () => {
     <section className="cta">
       <h3>Join Our Network</h3>
       <p>
-        Connect with the most promising projects or explore how we can support
-        your launch and growth.
+        Discover top projects or accelerate your own venture's launch and
+        growth.
       </p>
       <div className="cta-buttons">
         <a

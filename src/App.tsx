@@ -45,7 +45,7 @@ const Home: React.FC = () => (
         <h1 className="regire">Regire</h1>
       </div>
       <a href="mailto:jesse@regiregroup.com" className="hero-subtitle">
-        jesse@regiregroup.com
+        hello@regire.com
       </a>
     </section>
   </>
