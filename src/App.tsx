@@ -4,7 +4,6 @@ import "./App.css";
 import Logo from "./assets/R_Logo-02.png";
 import About from "./pages/About";
 import Services from "./pages/Services";
-import CallToAction from "./components/CallToAction";
 
 const App: React.FC = () => {
   return (
@@ -49,8 +48,6 @@ const Home: React.FC = () => (
         jesse@regiregroup.com
       </a>
     </section>
-
-    <CallToAction/>
   </>
 );
 
