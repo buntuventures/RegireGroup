@@ -9,6 +9,10 @@
   --background-color: #ffffff;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 #root {
   margin: 0 auto;
 }
@@ -36,11 +40,10 @@ body {
 
 .header {
   background-color: var(--background-color);
-  padding: 50px 0 10px;
+  padding: 30px 0 0;
   position: sticky;
   top: 0;
   z-index: 1000;
-  /* box-shadow: 0 2px 4px rgba(0,0,0,0.1); */
 }
 
 .header-content {
@@ -108,17 +111,19 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .logoFoot {
-  margin-right: 15px; /* Espace entre l'image et le séparateur */
+  margin-right: 15px;
   height: 100px;
+  max-width: 100%;
 }
 
 .regire {
-  margin: 0; /* Supprime les marges par défaut du h1 */
-  position: relative; /* Pour positionner le pseudo-élément */
-  padding-left: 15px; /* Espace entre le séparateur et le texte */
+  margin: 0;
+  position: relative;
+  padding-left: 15px;
 }
 
 .regire::before {
@@ -127,9 +132,9 @@ section {
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  height: 80%; /* Ajustez selon vos préférences */
+  height: 80%;
   width: 2px;
-  background-color: #333333; /* Couleur du séparateur, ajustez selon vos besoins */
+  background-color: #333333;
 }
 
 h2,
@@ -148,7 +153,7 @@ h3 {
 }
 
 .hero {
-  padding: 100px 0;
+  padding: 60px 0;
 }
 
 .hero-title {
@@ -162,12 +167,12 @@ h3 {
   font-size: 1.2rem;
   color: var(--link-color);
   text-decoration: none;
-  transition: color 0.3s ease; /* Ajoute une transition en douceur pour le changement de couleur */
+  transition: color 0.3s ease;
 }
 
 .hero-subtitle:hover {
-  color: var(--primary-color); /* Change la couleur au survol */
-  text-decoration: underline; /* Ajoute un soulignement au survol */
+  color: var(--primary-color);
+  text-decoration: underline;
 }
 
 .about-content {
@@ -180,7 +185,7 @@ h3 {
 
 .about-content p,
 .services p,
-.cta p{
+.cta p {
   max-width: 65ch;
   margin-left: auto;
   margin-right: auto;
@@ -189,7 +194,7 @@ h3 {
 
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
 }
 
@@ -225,13 +230,15 @@ h3 {
 .cta {
   text-align: center;
   background-color: #f7f7f7;
-  padding: 60px 10px;
+  padding: 60px 20px;
   border-radius: 8px;
 }
 
-
 .cta-buttons {
   margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .btn {
@@ -242,12 +249,12 @@ h3 {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin: 10px;
 }
 
 .btn.primary {
   background-color: var(--primary-color);
   color: var(--secondary-color);
-  margin-right: 15px;
 }
 
 .btn.secondary {
@@ -270,15 +277,25 @@ h3 {
 @media (max-width: 768px) {
   .header-content {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 
   nav {
-    margin-top: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav a {
+    margin: 5px 10px;
   }
 
   h2 {
     font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
   }
 
   .hero-title {
@@ -286,20 +303,67 @@ h3 {
   }
 
   .hero-subtitle {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   .service-grid {
     grid-template-columns: 1fr;
   }
 
-  .cta-buttons {
-    display: flex;
+  .cta {
+    padding: 40px 20px;
+  }
+
+  .btn {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 15px 0;
+  }
+
+  .hero {
+    padding: 40px 0;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  .service-item {
+    padding: 20px;
+  }
+
+  .preaction {
     flex-direction: column;
     align-items: center;
   }
 
-  .btn {
-    margin: 10px 0;
+  .logoFoot {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .regire::before {
+    display: none;
+  }
+
+  .regire {
+    padding-left: 0;
   }
 }
