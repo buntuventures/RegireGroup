@@ -3,22 +3,22 @@ import React from "react";
 const CallToAction: React.FC = () => {
   return (
     <section className="cta">
-      <h3>Join Our Network</h3>
+      <h3>Get in touch</h3>
       <p>
-        Discover top projects or accelerate your own venture's launch and
-        growth.
+        Whether you want to collaborate with best mind or tell us about a
+        project - reach out.
       </p>
       <div className="cta-buttons">
         <a
-          href="https://docs.google.com/forms/d/1SeGhJXm4G9SU_zmIBUQzYqfqydZMCoT9N93HfaD_Y64/edit"
+          href="https://forms.gle/Aa3ykR5rxsxQ4Gdd8"
           className="btn primary"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Join Us
+          I’m a creator
         </a>
         <a href="mailto:hello@regire.com" className="btn secondary">
-          Get in Touch
+          I’m a project
         </a>
       </div>
     </section>
