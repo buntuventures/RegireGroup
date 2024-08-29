@@ -165,7 +165,7 @@ section {
 
 .logoFoot {
   margin-right: 15px;
-  height: 60px;
+  height: 70px;
   max-width: 30%;
 }
 
@@ -185,8 +185,8 @@ section {
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  height: 70%;
-  width: 2px;
+  height: 75%;
+  width: 3px;
   background-color: #333333;
 }
 
@@ -217,7 +217,7 @@ h3 {
 }
 
 .hero-subtitle {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: var(--link-color);
   text-decoration: none;
   transition: color 0.3s ease;
