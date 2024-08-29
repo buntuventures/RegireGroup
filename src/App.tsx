@@ -29,9 +29,14 @@ const App: React.FC = () => {
           </Routes>
         </main>
 
-        {/* <footer className="footer">
-          <p>&copy; 2024 Regire. All rights reserved.</p>
-        </footer> */}
+        <footer className="footer">
+          <p>
+            {/* &copy; 2024 Regire.{" "} */}
+            <a href="mailto:hello@regire.com" className="hero-subtitle">
+              hello@regire.com
+            </a>
+          </p>
+        </footer>
       </div>
     </Router>
   );
@@ -44,9 +49,6 @@ const Home: React.FC = () => (
         <img src={Logo} alt="RegireLogo" className="logoFoot" />
         <h1 className="regire">Regire</h1>
       </div>
-      <a href="mailto:hello@regire.com" className="hero-subtitle">
-        hello@regire.com
-      </a>
     </section>
   </>
 );
