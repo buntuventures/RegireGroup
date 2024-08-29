@@ -24,10 +24,7 @@ const App: React.FC = () => {
               <Link to="/about">About</Link>
               <Link to="/services">Services</Link>
             </nav>
-            <button
-              className={`hamburger-button ${isMobileMenuOpen ? "open" : ""}`}
-              onClick={toggleMobileMenu}
-            >
+            <button className="hamburger-button" onClick={toggleMobileMenu}>
               <span></span>
               <span></span>
               <span></span>
@@ -36,6 +33,9 @@ const App: React.FC = () => {
         </header>
 
         <div className={`mobile-menu ${isMobileMenuOpen ? "open" : ""}`}>
+          <button className="close-button" onClick={toggleMobileMenu}>
+            &times;
+          </button>
           <nav>
             <Link to="/" onClick={toggleMobileMenu}>
               Home

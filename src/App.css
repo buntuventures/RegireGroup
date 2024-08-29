@@ -296,6 +296,9 @@ h3 {
   border: none;
   cursor: pointer;
   padding: 20px;
+  /* right: 20px;
+  top: 50%;
+  transform: translateY(-50%); */
   z-index: 1002;
 }
 
@@ -334,23 +337,28 @@ h3 {
   align-items: center;
   z-index: 1001;
   opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
+  /* pointer-events: none; */
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .mobile-menu.open {
   opacity: 1;
-  pointer-events: auto;
+  /* pointer-events: auto; */
+  visibility: visible;
 }
 
 .mobile-menu nav {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 20px;
 }
 
 .mobile-menu a {
   font-size: 1.5rem;
+  color: var(--text-color);
+  text-decoration: none;
 }
 
 .close-button {
@@ -361,7 +369,7 @@ h3 {
   border: none;
   font-size: 2rem;
   cursor: pointer;
-  z-index: 1003;
+  color: var(--text-color);
 }
 
 @media (max-width: 768px) {
