@@ -29,9 +29,9 @@ const App: React.FC = () => {
           </Routes>
         </main>
 
-        <footer className="footer">
+        {/* <footer className="footer">
           <p>&copy; 2024 Regire. All rights reserved.</p>
-        </footer>
+        </footer> */}
       </div>
     </Router>
   );
