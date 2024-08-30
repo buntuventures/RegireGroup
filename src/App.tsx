@@ -47,7 +47,7 @@ const App: React.FC = () => {
             <nav>
               <Link to="/">Home</Link>
             </nav>
-            <nav className="desktop-nav">
+            <nav className="nav">
               <Link to="/about">About</Link>
               <Link to="/services">Services</Link>
             </nav>
@@ -103,18 +103,20 @@ const App: React.FC = () => {
 
 const Home: React.FC = () => (
   <>
-    <section className="hero">
-      <div className="home-container">
+   <section className="hero">
+      <div className="hero-content">
         <Link to="/about" className="logo-large">
           <img src={Logo} alt="Regire Logo" />
         </Link>
-        <a href="mailto:hello@regire.com" className="hero-subtitle">
-          hello@regire.com
-        </a>
-      </div>
-      <div className="preaction">
-        <img src={Logo} alt="RegireLogo" className="logoFoot" />
-        <h1 className="regire">Regire</h1>
+        <div className="hero-bottom-content">
+          <a href="mailto:hello@regire.com" className="hero-subtitle">
+            hello@regire.com
+          </a>
+          <div className="preaction">
+            <img src={Logo} alt="RegireLogo" className="logoFoot" />
+            <h1 className="regire">Regire</h1>
+          </div>
+        </div>
       </div>
     </section>
   </>
