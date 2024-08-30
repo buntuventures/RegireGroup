@@ -1,21 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import CallToAction from "../components/CallToAction";
+import useWindowSize from "../utils/useWindowsSize"; // Assurez-vous que le chemin d'importation est correct
 
 interface ServiceItem {
   title: string;
   items: string[];
 }
 
-const ServiceItem: React.FC<ServiceItem> = ({ title, items }) => (
-  <div className="service-item">
-    <h3>{title}</h3>
-    <ul>
-      {items.map((item, index) => (
-        <li key={index}>{item}</li>
-      ))}
-    </ul>
-  </div>
-);
+const ServiceItem: React.FC<ServiceItem> = ({ title, items }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const { width } = useWindowSize();
+  const isMobile = width ? width <= 768 : false;
+
+  const toggleService = () => {
+    if (isMobile) {
+      setIsOpen(!isOpen);
+    }
+  };
+
+  return (
+    <div className="service-item">
+      <h3
+        onClick={toggleService}
+        className={`service-title ${isMobile ? "clickable" : ""}`}
+      >
+        {title}
+        {isMobile && (
+          <span className={`toggle-icon ${isOpen ? "open" : ""}`}>
+            {isOpen ? "-" : "+"}
+          </span>
+        )}
+      </h3>
+      <ul
+        className={`service-list ${
+          isMobile ? (isOpen ? "open" : "closed") : ""
+        }`}
+      >
+        {items.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
 const Services: React.FC = () => {
   const services: ServiceItem[] = [
@@ -47,7 +74,11 @@ const Services: React.FC = () => {
         </p>
         <div className="service-grid">
           {services.map((service, index) => (
-            <ServiceItem key={index} title={service.title} items={service.items} />
+            <ServiceItem
+              key={index}
+              title={service.title}
+              items={service.items}
+            />
           ))}
         </div>
       </section>

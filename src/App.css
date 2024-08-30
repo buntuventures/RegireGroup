@@ -106,7 +106,7 @@ main {
 section {
   width: 100%;
   max-width: 800px;
-  margin-bottom: 70px;
+  margin-bottom: 30px;
   text-align: center;
 }
 
@@ -288,6 +288,19 @@ h3 {
   position: absolute;
   left: 0;
   color: var(--primary-color);
+}
+
+.service-title {
+  cursor: default;
+}
+
+.toggle-icon {
+  display: none;
+}
+
+.service-list {
+  max-height: none;
+  overflow: visible;
 }
 
 .cta {
@@ -490,6 +503,43 @@ h3 {
 
   .service-item {
     padding: 25px;
+  }
+
+  .service-title {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .service-title.clickable {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .toggle-icon {
+    display: inline-block;
+    font-size: 2rem;
+    line-height: 1;
+    transition: transform 0.3s ease;
+    padding-left: 10px;
+  }
+
+  .toggle-icon.open {
+    transform: rotate(180deg);
+  }
+
+  .service-list {
+    max-height: 1000px; /* Ajustez cette valeur selon vos besoins */
+    opacity: 1;
+  }
+
+  .service-list.closed {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
   }
 
   .cta {

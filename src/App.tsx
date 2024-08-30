@@ -105,9 +105,9 @@ const Home: React.FC = () => (
   <>
     <section className="hero">
       <div className="home-container">
-        <div className="logo-large">
+        <Link to="/about" className="logo-large">
           <img src={Logo} alt="Regire Logo" />
-        </div>
+        </Link>
         <a href="mailto:hello@regire.com" className="hero-subtitle">
           hello@regire.com
         </a>
