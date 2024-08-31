@@ -103,7 +103,7 @@ const App: React.FC = () => {
 
 const Home: React.FC = () => (
   <>
-   <section className="hero">
+    <section className="hero">
       <div className="hero-content">
         <Link to="/about" className="logo-large">
           <img src={Logo} alt="Regire Logo" />
