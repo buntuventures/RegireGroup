@@ -604,7 +604,7 @@ h3 {
 
 @media (max-height: 600px) {
   .logo-large {
-    max-width: 200px; /* Réduire la taille du logo sur les écrans de faible hauteur */
+    max-width: 350px; /* Réduire la taille du logo sur les écrans de faible hauteur */
   }
 
   .hero-bottom-content {
@@ -687,7 +687,7 @@ h3 {
   }
 
   .logo-large {
-    max-width: 350px; /* Réduire la taille du logo sur les très petits écrans */
+    max-width: 300px; /* Réduire la taille du logo sur les très petits écrans */
   }
   
   .hero-subtitle {
