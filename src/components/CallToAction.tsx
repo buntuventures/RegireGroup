@@ -5,8 +5,8 @@ const CallToAction: React.FC = () => {
     <section className="cta">
       <h3>Get in touch</h3>
       <p>
-        Whether you want to collaborate with best minds or tell us about a
-        project - reach out.
+        Whether you want to collaborate with the best minds or tell us about a
+        project, reach out to us.
       </p>
       <div className="cta-buttons">
         <a
