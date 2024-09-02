@@ -122,21 +122,6 @@ section {
   text-align: center;
 }
 
-.home-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  height: calc(
-    100vh - 200px
-  ); /* Ajustez en fonction de la hauteur de votre header */
-  padding: 2rem;
-}
-
-.home-container a {
-  margin: 20px 0 0;
-}
-
 .logo-large {
   position: absolute;
   top: 45%;
@@ -163,7 +148,6 @@ section {
   align-items: center;
   width: 100%;
 }
-
 
 .logo-small {
   display: flex;
@@ -388,12 +372,12 @@ h3 {
   opacity: 0.9;
 }
 
-.footer {
+/* .footer {
   text-align: center;
   padding: 20px 0;
   background-color: var(--background-color);
   border-top: 1px solid #eaeaea;
-}
+} */
 
 .hamburger-button {
   outline: none;
@@ -510,7 +494,7 @@ h3 {
   }
 
   .logo-large {
-    top:40%;
+    top: 40%;
     max-width: 400px; /* Réduire la taille du logo sur les écrans de faible hauteur */
   }
 
@@ -573,10 +557,11 @@ h3 {
     padding: 15px 20px;
     background-color: #f8f8f8;
     border: none;
-    text-align: left;
+    text-align: center;
     cursor: pointer;
     transition: background-color 0.3s ease;
     outline: none;
+    position: relative;
   }
 
   .accordion-header:focus:not(:focus-visible) {
@@ -588,12 +573,16 @@ h3 {
     font-size: 1.1rem;
     font-weight: 600;
     color: #333;
+    flex-grow: 1;
+    text-align: center;
   }
 
   .accordion-icon {
     font-size: 1.5rem;
     color: #666;
     transition: transform 0.3s ease;
+    position: absolute;
+    right: 20px;
   }
 
   .accordion-item.open .accordion-icon {
@@ -606,7 +595,7 @@ h3 {
     overflow: hidden;
     transition: all 0.3s ease;
     padding: 0 20px;
-    background-color: #ffffff;
+    background-color: #f2f2f2;
   }
 
   .accordion-item.open .accordion-content {
@@ -644,88 +633,9 @@ h3 {
   }
 
   .hero-bottom-content {
-    top:70%;
+    top: 70%;
   }
 }
-
-@media (max-height: 600px) {
-  .logo-large {
-    max-width: 300px; /* Réduire la taille du logo sur les écrans de faible hauteur */
-  }
-
-  .hero-bottom-content {
-    bottom: 10px;
-  }
-}
-/* @media (max-width: 540px) {
-  .header-content {
-    min-width: 100%;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  nav {
-    margin-top: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  nav a {
-    margin: 5px 10px;
-  }
-}
-
-@media (max-width: 480px) {
-  .header {
-    padding: 15px 0;
-  }
-
-  .hero {
-    padding: 40px 0;
-  }
-
-  .hero-title {
-    font-size: 2rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-
-  h2 {
-    font-size: 1.75rem;
-  }
-
-  h3 {
-    font-size: 1.5rem;
-  }
-
-  .services {
-    padding: 40px 0;
-  }
-
-  .service-item h3 {
-    font-size: 1.3rem;
-  }
-
-  .preaction {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .logoFoot {
-    margin-right: 0;
-    margin-bottom: 15px;
-  }
-
-  .regire::before {
-    display: none;
-  }
-
-  .regire {
-    padding-left: 0;
-  }
-} */
 
 @media (max-width: 480px) {
   main {
@@ -733,7 +643,7 @@ h3 {
   }
 
   .logo-large {
-    top:45%;
+    top: 45%;
     max-width: 300px; /* Réduire la taille du logo sur les très petits écrans */
   }
 
@@ -748,4 +658,23 @@ h3 {
   .regire {
     font-size: 1.4rem;
   }
+
+  .accordion-header {
+    padding: 10px 0px 10px 30px; /* Réduction du padding horizontal */
+  }
+
+  .accordion-content ul{
+    padding-right: 20px ;
+  }
+
+  .accordion-title {
+    font-size: 1rem; /* Réduction de la taille de la police */
+    max-width: calc(100% - 60px); /* Ajustement de la largeur maximale */
+  }
+
+  .accordion-icon {
+    font-size: 1.3rem; /* Réduction de la taille de l'icône */
+    right: 10px; /* Rapprochement de l'icône du bord */
+  }
+
 }
