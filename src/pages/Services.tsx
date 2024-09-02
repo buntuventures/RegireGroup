@@ -40,6 +40,7 @@ const ServiceItem: React.FC<ServiceItem> = ({ title, items }) => {
           <li key={index}>{item}</li>
         ))}
       </ul>
+  
     </div>
   );
 };
