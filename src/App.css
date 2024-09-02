@@ -157,19 +157,13 @@ section {
   bottom: 20px;
   left: 0;
   right: 0;
-  top: 70%;
+  top: 75%;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
 }
 
-.contact-email {
-  font-size: 1.2rem;
-  color: var(--link-color);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
 
 .logo-small {
   display: flex;
