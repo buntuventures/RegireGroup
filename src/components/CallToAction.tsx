@@ -17,7 +17,7 @@ const CallToAction: React.FC = () => {
         >
           I’m a creator
         </a>
-        <a href="mailto:hello@regire.com" className="btn secondary">
+        <a href="https://forms.gle/3DtC4VBdYbkVJkL1A" className="btn secondary">
           I’m a project
         </a>
       </div>
