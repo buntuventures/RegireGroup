@@ -669,6 +669,7 @@ h3 {
   }
 
   .accordion-title {
+    padding-left: 5px;
     font-size: 1rem; /* Réduction de la taille de la police */
     max-width: calc(100% - 35px); /* Ajustement de la largeur maximale */
   }
