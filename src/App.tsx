@@ -7,7 +7,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import "./App.css";
-import Logo from "./assets/R_Logo-02.png";
+import Logo from "/R_Logo-02.png";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import useWindowSize from "./utils/useWindowsSize";
