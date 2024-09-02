@@ -288,7 +288,7 @@ h3 {
 .service-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
+  gap: 20px;
   /* margin-top: 40px; */
 }
 
@@ -551,58 +551,87 @@ h3 {
     font-size: 1.1rem;
   }
 
-  .service-grid {
-    grid-template-columns: 1fr;
+  .mobile-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 
-  .service-item {
-    padding: 25px;
+  .accordion-item {
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
-  .service-title {
-    cursor: pointer;
+  .accordion-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-
-  .service-title.clickable {
+    width: 100%;
+    padding: 15px 20px;
+    background-color: #f8f8f8;
+    border: none;
+    text-align: left;
     cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 0px;
-    text-align: center;
+    transition: background-color 0.3s ease;
+    outline: none;
   }
 
-  .toggle-icon {
-    display: inline-block;
-    font-size: 2rem;
-    line-height: 1;
+  .accordion-header:focus:not(:focus-visible) {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .accordion-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+  }
+
+  .accordion-icon {
+    font-size: 1.5rem;
+    color: #666;
     transition: transform 0.3s ease;
-    padding-left: 20px;
   }
 
-  .toggle-icon.open {
+  .accordion-item.open .accordion-icon {
     transform: rotate(180deg);
   }
 
-  .service-list {
-    max-height: 1000px; /* Ajustez cette valeur selon vos besoins */
-    opacity: 1;
-    padding-right: 10px;
-  }
-
-  .service-list.closed {
+  .accordion-content {
     max-height: 0;
     opacity: 0;
     overflow: hidden;
+    transition: all 0.3s ease;
+    padding: 0 20px;
+    background-color: #ffffff;
   }
-  ul.service-list.open{
-    padding-right:60px ;
-    text-align:center;
-    max-width: fit-content;
-    max-width: 95%;
+
+  .accordion-item.open .accordion-content {
+    max-height: 1000px; /* Ajustez selon vos besoins */
+    opacity: 1;
+    padding: 20px;
+  }
+
+  .accordion-content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .accordion-content li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .accordion-content li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #666;
   }
 
   .cta {

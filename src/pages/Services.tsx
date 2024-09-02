@@ -1,51 +1,37 @@
 import React, { useState } from "react";
 import CallToAction from "../components/CallToAction";
-import useWindowSize from "../utils/useWindowsSize"; // Assurez-vous que le chemin d'importation est correct
+import useWindowSize from "../utils/useWindowsSize";
 
 interface ServiceItem {
   title: string;
   items: string[];
 }
 
-const ServiceItem: React.FC<ServiceItem> = ({ title, items }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const { width } = useWindowSize();
-  const isMobile = width ? width <= 768 : false;
-
-  const toggleService = () => {
-    if (isMobile) {
-      setIsOpen(!isOpen);
-    }
-  };
-
+const ServiceAccordionItem: React.FC<
+  ServiceItem & { isOpen: boolean; toggleOpen: () => void }
+> = ({ title, items, isOpen, toggleOpen }) => {
   return (
-    <div className="service-item">
-      <h3
-        onClick={toggleService}
-        className={`service-title ${isMobile ? "clickable" : ""}`}
-      >
-        {title}
-        {isMobile && (
-          <span className={`toggle-icon ${isOpen ? "open" : ""}`}>
-            {isOpen ? "-" : "+"}
-          </span>
-        )}
-      </h3>
-      <ul
-        className={`service-list ${
-          isMobile ? (isOpen ? "open" : "closed") : ""
-        }`}
-      >
-        {items.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul>
-  
+    <div className={`accordion-item ${isOpen ? "open" : ""}`}>
+      <button className="accordion-header" onClick={toggleOpen}>
+        <span className="accordion-title">{title}</span>
+        <span className="accordion-icon">{isOpen ? "-" : "+"}</span>
+      </button>
+      <div className="accordion-content">
+        <ul>
+          {items.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
 
 const Services: React.FC = () => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const { width } = useWindowSize();
+  const isMobile = width ? width <= 768 : false;
+
   const services: ServiceItem[] = [
     {
       title: "For Consumer Startups and Web3 Projects",
@@ -65,6 +51,10 @@ const Services: React.FC = () => {
     },
   ];
 
+  const toggleAccordion = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   return (
     <>
       <section className="services">
@@ -73,14 +63,26 @@ const Services: React.FC = () => {
           Our unique approach fosters growth and collaboration, benefiting both
           innovators and influencers in a dynamic ecosystem.
         </p>
-        <div className="service-grid">
-          {services.map((service, index) => (
-            <ServiceItem
-              key={index}
-              title={service.title}
-              items={service.items}
-            />
-          ))}
+        <div className={`service-grid ${isMobile ? "mobile-accordion" : ""}`}>
+          {services.map((service, index) =>
+            isMobile ? (
+              <ServiceAccordionItem
+                key={index}
+                {...service}
+                isOpen={openIndex === index}
+                toggleOpen={() => toggleAccordion(index)}
+              />
+            ) : (
+              <div key={index} className="service-item">
+                <h3>{service.title}</h3>
+                <ul>
+                  {service.items.map((item, itemIndex) => (
+                    <li key={itemIndex}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            )
+          )}
         </div>
       </section>
       <CallToAction />
