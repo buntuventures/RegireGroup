@@ -515,6 +515,11 @@ h3 {
     display: block;
   }
 
+  .logo-large {
+    top:40%;
+    max-width: 400px; /* Réduire la taille du logo sur les écrans de faible hauteur */
+  }
+
   .mobile-menu nav {
     display: flex;
     flex-direction: column;
@@ -622,7 +627,7 @@ h3 {
 
 @media (max-height: 600px) {
   .logo-large {
-    max-width: 350px; /* Réduire la taille du logo sur les écrans de faible hauteur */
+    max-width: 300px; /* Réduire la taille du logo sur les écrans de faible hauteur */
   }
 
   .hero-bottom-content {
@@ -705,6 +710,7 @@ h3 {
   }
 
   .logo-large {
+    top:45%;
     max-width: 300px; /* Réduire la taille du logo sur les très petits écrans */
   }
 
