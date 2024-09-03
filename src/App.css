@@ -617,7 +617,6 @@ h3 {
   }
 
   .accordion-content li::before {
-    content: "•";
     position: absolute;
     left: 0;
     color: #666;
